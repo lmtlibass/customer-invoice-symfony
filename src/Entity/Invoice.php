@@ -23,6 +23,12 @@ class Invoice
     #[ORM\Column]
     private ?int $customer_id = null;
 
+
+    public function __toString(){
+        return $this->invoice_number; 
+    }
+
+    
     public function getId(): ?int
     {
         return $this->id;

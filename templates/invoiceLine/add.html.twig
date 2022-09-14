@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{ % for message in app.flashes('success') % }
+    <div class="alert alert.success">
+        {{ message }}
+    </div>
+{% endfor %}
+{% block body %}
+    <div class="container p-5">
+        {{ form_start(form) }}
+        {{ form_errors(form)}}
+            {{ form_widget(form) }}
+        <button class="btn btn-success">create</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
