@@ -37,8 +37,6 @@ class InvoiceController extends AbstractController
             $this->em->flush();
             return $this->redirectToRoute("lineInvoice.create");
         }
-
-
         return $this->render('invoice/add.html.twig', [
             'form' => $form->createView()
         ]);
