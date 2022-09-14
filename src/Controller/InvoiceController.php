@@ -18,12 +18,9 @@ class InvoiceController extends AbstractController
         $this->repository = $repository;
         $this->em         = $em;
     }
-
     public function index(){
         return $this->render('base.html.twig');
     }
-
-    
     /**
      * @Route("invoice/create", name="invoice.create")
      */
@@ -55,7 +52,6 @@ class InvoiceController extends AbstractController
             $this->em->flush();
             $this->addFlash('success', 'invoice created successfully');
             return $this->redirectToRoute("lineInvoice.create");
-
         }
 
         return $this->render('invoiceLine/add.html.twig', [
