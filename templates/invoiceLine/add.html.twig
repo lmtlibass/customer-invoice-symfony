@@ -2,11 +2,13 @@
 
     
 {% block body %}
-    {% for message in app.flashes('success') %}
-        <div class="alert alert.success">
-            {{ message }}
-        </div>
-    {% endfor %}
+    <div class="container">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert>
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
     <div class="container p-5">
         {{ form_start(form) }}
         {{ form_errors(form)}}
